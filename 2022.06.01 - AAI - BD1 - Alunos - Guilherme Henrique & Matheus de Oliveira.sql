@@ -9,7 +9,7 @@ Alunos:	Guilherme Henrique & Matheus de Oliveria.
 PARTE 01 - SELECT:
 ==========================================================================================================================*/
 	/*
-	Quest„o 01:
+	Quest√£o 01:
 	======================================================================================================================*/
 		SELECT	SUM(p.PIB) AS 'Total_PIB'
 		FROM	PAIS p 
@@ -19,7 +19,7 @@ PARTE 01 - SELECT:
 
 
 	/*
-	Quest„o 02:
+	Quest√£o 02:
 	======================================================================================================================*/
 		SELECT	MIN(PIB) AS 'Menor_PIB'
 		FROM	PAIS p INNER JOIN continente c
@@ -29,16 +29,16 @@ PARTE 01 - SELECT:
 
 
 	/*
-	Quest„o 03:
+	Quest√£o 03:
 	======================================================================================================================*/
-		SELECT		p.pais AS 'PaÌs',
+		SELECT		p.pais AS 'Pa√≠s',
 					p.PIB/p.QTDE_HAB AS 'PIBXQTDEHAB'
 		FROM		PAIS p
 		ORDER BY	p.pais ASC;
 
 
 	/*
-	Quest„o 04:
+	Quest√£o 04:
 	======================================================================================================================*/
 		SELECT		p.pais AS 'PAIS',
 					(p.RENDA_PERCAPTA * p.QTDE_HAB) AS 'PercXQtdeHab'
@@ -48,7 +48,7 @@ PARTE 01 - SELECT:
 
 
 	/*
-	Quest„o 05:
+	Quest√£o 05:
 	======================================================================================================================*/
 		SELECT	p.codpais AS 'CODPAIS',
 				p.pais AS 'PAIS',
@@ -60,7 +60,7 @@ PARTE 01 - SELECT:
 
 
 	/*
-	Quest„o 06:
+	Quest√£o 06:
 	======================================================================================================================*/
 		SELECT	AVG(p.QTDE_HAB) AS 'Media_Habitantes'
 		FROM	PAIS p 
@@ -68,7 +68,7 @@ PARTE 01 - SELECT:
 
 
 	/*
-	Quest„o 07:
+	Quest√£o 07:
 	======================================================================================================================*/
 		SELECT	SUM(p.PIB) AS 'Soma_PIB'
 		FROM	PAIS p INNER JOIN grupo g
@@ -77,7 +77,7 @@ PARTE 01 - SELECT:
 
 
 	/*
-	Quest„o 08:
+	Quest√£o 08:
 	======================================================================================================================*/
 		SELECT	p.PAIS AS 'PAIS',
 				p.QTDE_HAB AS 'QTDE_HAB',
@@ -90,7 +90,7 @@ PARTE 01 - SELECT:
 
 
 	/*
-	Quest„o 09:
+	Quest√£o 09:
 
 	!!!! The app says that there's a mistake in the row of WHERE, I'm not finding it! Check it later on!
 	======================================================================================================================*/
@@ -98,16 +98,18 @@ PARTE 01 - SELECT:
 					p.pais AS 'PAIS',
 					ps.VALORNEGOCIADO AS 'VALOR NEGOCIADO'
 		FROM		continente c INNER JOIN pais p
+					ON c.CODCONTINENTE = p.CODCONTINENTE
 					INNER JOIN paisxseg ps
 					ON p.CODPAIS = ps.CODPAIS
 					INNER JOIN SEGMENTO seg
 					ON seg.CODSEGMENTO = ps.CODSEGMENTO
-		WHERE		s.CODSEGMENTO = 3 AND (c.continente = 'EUROPA' OR c.continente = 'AMERICA DO NORTE')
-		ORDER BY	VALORNEGOCIADO ASC;
+		WHERE		seg.SEGMENTO = 'TECNOLOGIA' AND (c.continente = 'EUROPA' OR c.continente = 'AMERICA DO NORTE')
+		GROUP BY	P.PAIS, C.CONTINENTE, PS.VALORNEGOCIADO
+		ORDER BY	VALORNEGOCIADO DESC;
 
 
 	/*
-	Quest„o 10:
+	Quest√£o 10:
 	======================================================================================================================*/
 		SELECT		c.continente,
 					AVG(p.RENDA_PERCAPTA)
@@ -117,7 +119,7 @@ PARTE 01 - SELECT:
 
 
 	/*
-	Quest„o 11:
+	Quest√£o 11:
 	======================================================================================================================*/
 		SELECT		g.grupo AS 'GRUPO',
 					SUM(ps.VALORNEGOCIADO) AS 'TOTAL VLR NEGOCIADO'
@@ -129,7 +131,7 @@ PARTE 01 - SELECT:
 
 
 	/*
-	Quest„o 12:
+	Quest√£o 12:
 	======================================================================================================================*/
 		SELECT		s.segmento AS 'SEGMENTO',
 					AVG(p.PIB) AS 'MEDIA DO PIB'
@@ -144,7 +146,7 @@ PARTE 01 - SELECT:
 
 
 	/*
-	Quest„o 13:
+	Quest√£o 13:
 	======================================================================================================================*/
 		SELECT		c.continente,
 					AVG(p.renda_percapta) AS 'Media Per Capta'
@@ -155,7 +157,7 @@ PARTE 01 - SELECT:
 
 
 	/*
-	Quest„o 14:
+	Quest√£o 14:
 	======================================================================================================================*/
 		SELECT		g.GRUPO,
 					SUM(ps.VALORNEGOCIADO) AS 'TOTAL VLR NEGOCIADO'
@@ -168,7 +170,7 @@ PARTE 01 - SELECT:
 
 
 	/*
-	Quest„o 15:
+	Quest√£o 15:
 	======================================================================================================================*/
 		SELECT		s.segmento AS 'SEGMENTO',
 					AVG(p.pib) AS 'MEDIA PIB'
@@ -189,27 +191,27 @@ PARTE 01 - SELECT:
 PARTE 02 - INSERT, UPDATE e DELETE
 ==========================================================================================================================*/
 	/*
-	Quest„o 01:
+	Quest√£o 01:
 	======================================================================================================================*/
 		
 		
 	/*
-	Quest„o 02:
-	======================================================================================================================*/
-			
-		
-	/*
-	Quest„o 03:
+	Quest√£o 02:
 	======================================================================================================================*/
 			
 		
 	/*
-	Quest„o 04:
+	Quest√£o 03:
 	======================================================================================================================*/
 			
 		
 	/*
-	Quest„o 05:
+	Quest√£o 04:
+	======================================================================================================================*/
+			
+		
+	/*
+	Quest√£o 05:
 	======================================================================================================================*/
 
 
